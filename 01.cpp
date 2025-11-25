@@ -8,7 +8,12 @@ int main()
     string s;
     getline(cin, s);
     // rfind 成功查找返回索引（从 0 开始），否则返回 npos (size_t)(-1)
-    cout << s.length() - 1 - s.rfind(' ') << endl;
+    size_t pos = s.rfind(' ');
+    if (pos == string::npos || pos == s.length() - 1) {
+        cout << "0" << endl;
+    } else {
+        cout << s.length() - 1 - pos << endl;
+    }
 }
 
 /*
